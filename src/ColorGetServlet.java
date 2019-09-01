@@ -12,7 +12,7 @@ public class ColorGetServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter printWriter = response.getWriter();
 
-        printWriter.println("wybrany kolor: ");
+        printWriter.println("Wybrany kolor (Get): ");
         printWriter.println(kolor);
         printWriter.close();
     }
