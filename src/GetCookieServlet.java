@@ -6,23 +6,25 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class AddCookieServlet extends HttpServlet {
+public class GetCookieServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String data = request.getParameter("data");
+    }
 
-        Cookie cookie = new Cookie("MyCookie", data);
-        cookie.setMaxAge(3600);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        response.addCookie(cookie);
+        Cookie[] cookies = request.getCookies();
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
 
         PrintWriter pw = response.getWriter();
-        pw.println("W znaczniku MyCookie zostanie umieszczona wartość:");
-        pw.println(data);
+
+        for (int i=0; i < cookies.length; i++){
+            String name = cookies[i].getName();
+            String value = cookies[i].getValue();
+            pw.println("name:"+name+" cookie("+i+"): "+value);
+        } // for
+
         pw.close();
-
-    } // doPost
-
+    }
 }

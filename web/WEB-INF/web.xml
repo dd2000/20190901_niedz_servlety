@@ -20,6 +20,12 @@
         <servlet-name>AddCookieServlet</servlet-name>
         <servlet-class>AddCookieServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetCookieServlet</servlet-name>
+        <servlet-class>GetCookieServlet</servlet-class>
+    </servlet>
+
+    <!-- MAPOWANIE -->
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/servlety/HelloServlet</url-pattern>
@@ -35,6 +41,10 @@
     <servlet-mapping>
         <servlet-name>AddCookieServlet</servlet-name>
         <url-pattern>/servlety/AddCookieServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetCookieServlet</servlet-name>
+        <url-pattern>/servlety/GetCookieServlet</url-pattern>
     </servlet-mapping>
 
 

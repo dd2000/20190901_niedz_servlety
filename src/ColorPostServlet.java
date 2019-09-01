@@ -17,7 +17,4 @@ public class ColorPostServlet extends HttpServlet {
         printWriter.close();
     }
 
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//
-//    }
 }
