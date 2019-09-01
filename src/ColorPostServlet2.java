@@ -11,7 +11,7 @@ public class ColorPostServlet2 {
         response.setCharacterEncoding("UTF-8");
         PrintWriter printWriter = response.getWriter();
 
-        printWriter.println("Wybrany kolor Post: ");
+        printWriter.println("Wybrany kolor (Post): ");
         printWriter.println(kolor);
         printWriter.close();
     }

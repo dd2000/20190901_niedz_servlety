@@ -16,6 +16,10 @@
         <servlet-name>ColorPostServlet</servlet-name>
         <servlet-class>ColorPostServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddCookieServlet</servlet-name>
+        <servlet-class>AddCookieServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/servlety/HelloServlet</url-pattern>
@@ -28,5 +32,10 @@
         <servlet-name>ColorPostServlet</servlet-name>
         <url-pattern>/servlety/ColorPostServlet2</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCookieServlet</servlet-name>
+        <url-pattern>/servlety/AddCookieServlet</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

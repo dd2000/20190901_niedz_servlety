@@ -12,12 +12,12 @@ public class ColorPostServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter printWriter = response.getWriter();
 
-        printWriter.println("Wybrany kolor Post: ");
+        printWriter.println("Wybrany kolor (Post): ");
         printWriter.println(kolor);
         printWriter.close();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
+//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//
+//    }
 }
