@@ -23,6 +23,7 @@ public class DataServlet extends HttpServlet {
 
         date = new Date();
         hs.setAttribute("date", date);
+        pw.println("Aktualna data:"+date);
         pw.println("<br />");
 
         pw.close();

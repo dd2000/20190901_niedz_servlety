@@ -1,0 +1,82 @@
+package pl;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/Start")
+public class Servlet extends HttpServlet {
+
+    public Servlet(){
+        super();
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        response.getWriter().append("<html>");
+        response.getWriter().append("<body>");
+        response.getWriter().append("<form>");
+        response.getWriter().append("<label for=\"email\">email:</label>");
+        response.getWriter().append("<input type=\"text\" name=\"email\" />");
+        response.getWriter().append("<input type=\"submit\" />");
+        response.getWriter().append("</form>");
+        response.getWriter().append("</body>");
+        response.getWriter().append("</html>");
+    }
+}
+
+@WebServlet("/InfoServlet")
+public class InfoServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        if(request.getSession(true).getAttribute("email") == null) {
+            response.sendRedirect(request.getContextPath() + "/Start");
+        }
+
+        response.getWriter().append("<html><strong>" + request.getSession(true).getAttribute("email") + "</strong></html>");
+    }
+}
+
+package pl;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebFilter(filterName = "/InitFilter", urlPatterns = {"/Start"})
+public class InitFilter implements Filter {
+    public void destroy() {
+        System.out.println("Destroy filer");
+    }
+
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
+
+        if (request != null) {
+            if (request.getParameterMap().containsKey("email") && !request.getParameter("email").isEmpty()) {
+                ((HttpServletRequest) request).getSession().setAttribute("email", request.getParameter("email"));
+
+                ((HttpServletResponse) response).sendRedirect(((HttpServletRequest) request).getContextPath() + "/InfoServlet");
+            }
+
+        }
+        chain.doFilter(request, response);
+    }
+
+    public void init(FilterConfig config) throws ServletException {
+        System.out.println("Init filter");
+    }
+}
+
