@@ -41,5 +41,11 @@
   </font> <br />
   <% } %>
 
+  <% for (zmien = 9; zmien <=16; zmien++){ %>
+  <font color = "<%= zmien %>" size="<%= zmien %>">
+    Przykładowa zmiana rozmiaru i koloru
+  </font> <br />
+  <% } %>
+
   </body>
 </html>
