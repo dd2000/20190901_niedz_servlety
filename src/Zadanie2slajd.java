@@ -1,3 +1,13 @@
+/*
+Ćwiczenie 2:
+Treść: Skonstruuj serwlet, który pozwoli na odrębną reakcję w zależności od tego,
+czy użytkownik odwiedził stronę po raz pierwszy, czy też nie.
+Instrukcja rozwiązania:
+1. Dodaj nowy serwlet do aplikacji lub skorzystaj z poprzedniego.
+2. Skorzystaj z sesji, aby rozróżniezachowanie serwletu.
+ */
+
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

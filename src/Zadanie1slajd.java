@@ -1,3 +1,13 @@
+/*
+Ćwiczenie 1:
+Treść: Utwórz serwlet, który zwróci do klienta zdanie w formacie text/plain z zachowaniem polskich znaków.
+Instrukcja rozwiązania:
+1. Utwórz klasę dziedziczącą po klasie HttpServlet.
+2. Zadeklaruj w niej metodę doGet(), w której znajdzie się treść odpowiedzi.
+3. Wygeneruj odpowiedź korzystając z obiektu typu PrintWriter (res.getWriter()), pamiętając o ustawieniu nagłówków.
+4. Nie zapomnij o wpisie w pliku konfiguracyjnym web.xml lub adnotacji.
+ */
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
