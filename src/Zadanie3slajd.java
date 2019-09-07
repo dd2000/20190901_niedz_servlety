@@ -8,9 +8,10 @@ Instrukcja rozwiązania:
  */
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
-
+@WebServlet("/Zadanie3slajd")
 public class Zadanie3slajd extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     } //doPost
