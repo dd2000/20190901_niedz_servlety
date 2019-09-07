@@ -20,6 +20,7 @@ public class Zadanie3slajd extends HttpServlet {
         for(int i=0; i< request.getCookies().length; i++)
         {
             Cookie cookie = request.getCookies()[i];
+            // jeśli jest ciasteczko o nazwie "data" i ma wartość 45454 wyświetl "Czad! Jesteś ciachem!"
             if (cookie.getName().equals("data") && cookie.getValue().equals("45454")) {
                 response.getWriter().println("Czad! Jesteś ciachem!");
             } else {
