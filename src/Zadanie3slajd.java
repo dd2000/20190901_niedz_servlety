@@ -21,6 +21,8 @@ public class Zadanie3slajd extends HttpServlet {
             Cookie cookie = request.getCookies()[i];
             if (cookie.getName().equals("data") && cookie.getValue().equals("45454")) {
                 response.getWriter().println("Czad! Jesteś ciachem!");
+            } else {
+                response.getWriter().println("Ciacho nie wyszło!");
             } // if
         }// for
 
