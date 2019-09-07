@@ -1,0 +1,45 @@
+Wyrażenia <%= expression %>
+- ich wartość zostanie obliczona i wstawiona do danych
+wyjściowych servletu
+- kontener pobiera zawartość pomiędzy <%= a %> i umieszcza
+jako argument metody print() klasy JspWriter
+(PrintWriter): out.print()
+Wyrażenie
+<html>
+<body>
+Current Time: <%= java.util.Calendar.getInstance().getTime() %>
+</body>
+</html>
+
+
+Skryptlety <% code %>
+- mogą zawierać dowolną ilość kodu Javy
+- oferują dostęp do zmiennych zdefiniowanych dla stron JSP
+- mogą służyć np, do ustawiania nagłówków odpowiedzi oraz
+kodów stanu, komunikacji z bazą danych i innych złożonych instrukcji
+Skryptlet
+<% int sum = 2 + 2;
+out.print(sum);
+%>
+
+
+• Deklaracje <%! code %>
+- pozwalają na zdefiniowanie metod oraz pól, które zostaną
+wstawione do głównego ciała klasy servletu
+- używane zazwyczaj z wyrażeniami lub skryptletami
+Deklaracje
+<%!
+int x = 5;
+%>
+
+
+Dyrektywy <%@ directive attribute=„value”... %>
+- kontrolują proces translacji strony
+- page - atrybuty związane ze stroną
+. import - pozwala na określenie klas i pakietów, które
+zostaną zaimportowane do servletu wygenerowanego ze
+strony JSP
+Dyrektywy
+<%@ page import="java.util.Date" %>
+
+
