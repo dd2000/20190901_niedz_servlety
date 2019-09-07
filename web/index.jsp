@@ -6,11 +6,40 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%! int dzien = 7; %>
+<%! int rozmiar ; %>
+<%! int zmien; %>
+
+
+
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Test JSP</title>
   </head>
   <body>
-  $END$
+  <%!
+    int x = 5;
+  %>
+
+  <% int sum = 2 + 2;
+  out.print(sum);
+  %>
+
+  <%="Witajcie w SDA"%>
+
+  <%@page import="java.util.Date" %>
+  Dzień jest <%= new Date()%>
+  <% if(dzien == 1) { %>
+  <p>Jest poniedziałek</p>
+  <% } else { %>
+  <p>Jest niedziela</p>
+  <% } %>
+
+  <% for (rozmiar = 1; rozmiar <=5; rozmiar++){ %>
+  <font color = "blue" size="<%= rozmiar %>">
+    Przykładowa zmiana rozmiaru i koloru
+  </font> <br />
+  <% } %>
+
   </body>
 </html>
