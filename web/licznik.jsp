@@ -21,5 +21,6 @@
     }
     application.setAttribute("liczbaWejsc", liczbaWejsc);
 %>
+<p><b>Liczba wejść: </b><%= liczbaWejsc %></p>
 </body>
 </html>
