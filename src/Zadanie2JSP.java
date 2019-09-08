@@ -14,5 +14,8 @@ public class Zadanie2JSP extends HttpServlet {
         if (request.getParameterMap().containsKey("id")){
             response.sendRedirect("/stronaBledu.jsp");
         } // if
+        if (request.getParameterMap().containsValue("1")){
+            response.sendRedirect("/stronaBledu.jsp");
+        }
     }
 } // class Zadanie2JSP
