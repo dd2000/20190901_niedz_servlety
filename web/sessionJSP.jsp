@@ -31,11 +31,17 @@
     if (visitCount == null) {
         visitCount = 0;
     }
+
     visitCount = visitCount + 1;
     session.setAttribute(visitCountKey, visitCount);
     }
-
-
 %>
+<p>ID: <% out.print(session.getId()); %> </p>
+<p>Czas utworzenia: <% out.print(crestaTime); %> </p>
+<p>Czas ostatniego zalodowania: <% out.print(lastAcessTime); %> </p>
+<p>Liczba wizyt: <% out.print(visitCount); %> </p>
+<p>userID: <% out.print(userID); %> </p>
+<p>Maksymalny brak aktywności sesji: <% out.print(session.getMaxInactiveInterval()); %> </p>
+
 </body>
 </html>
