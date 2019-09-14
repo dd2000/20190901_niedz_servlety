@@ -35,7 +35,7 @@ public class Home extends HttpServlet {
         request.setAttribute("tresc", "stworzenie nowej linii");
         request.setAttribute("url", "http://google.pl");
 
-        RequestDispatcher rd= getServletContext().getRequestDispatcher("/home'jsp");
+        RequestDispatcher rd= getServletContext().getRequestDispatcher("/home.jsp");
         rd.forward(request, response);
 
     }

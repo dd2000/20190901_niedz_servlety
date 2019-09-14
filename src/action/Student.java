@@ -1,12 +1,12 @@
 package action;
 
 public class Student {
-    private int Id;
+    private int id;
     private String name;
     private String role;
 
     public void setId(int i) {
-        this.Id = i;
+        this.id = i;
     }
 
     public void setName(String bogusz) {
